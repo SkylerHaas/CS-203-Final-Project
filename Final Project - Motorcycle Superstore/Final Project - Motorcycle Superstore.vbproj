@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBrowseInventory.Designer.vb">
+      <DependentUpon>frmBrowseInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowseInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmOpeningScreen.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmBrowseInventory.resx">
+      <DependentUpon>frmBrowseInventory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOpeningScreen.resx">
       <DependentUpon>frmOpeningScreen.vb</DependentUpon>
     </EmbeddedResource>
