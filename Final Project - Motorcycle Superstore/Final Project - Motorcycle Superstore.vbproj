@@ -78,6 +78,12 @@
     <Compile Include="frmBrowseInventory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLoanPayment.Designer.vb">
+      <DependentUpon>frmLoanPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoanPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmOpeningScreen.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmBrowseInventory.resx">
       <DependentUpon>frmBrowseInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoanPayment.resx">
+      <DependentUpon>frmLoanPayment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpeningScreen.resx">
       <DependentUpon>frmOpeningScreen.vb</DependentUpon>

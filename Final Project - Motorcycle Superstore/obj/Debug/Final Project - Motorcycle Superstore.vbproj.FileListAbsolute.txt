@@ -1,2 +1,15 @@
 C:\Users\skyda\Desktop\Visual Basic\CS 203\Final Project\Final Project - Motorcycle Superstore\Final Project - Motorcycle Superstore\bin\Debug\Final Project - Motorcycle Superstore.exe.config
 C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\bin\Debug\Final Project - Motorcycle Superstore.exe.config
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\bin\Debug\Final Project - Motorcycle Superstore.exe
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\bin\Debug\Final Project - Motorcycle Superstore.pdb
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\bin\Debug\Final Project - Motorcycle Superstore.xml
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.vbprojResolveAssemblyReference.cache
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\WindowsApplication1.frmBrowseInventory.resources
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\WindowsApplication1.frmOpeningScreen.resources
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\WindowsApplication1.frmSellInventory.resources
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\WindowsApplication1.frmViewLoans.resources
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.vbproj.GenerateResource.Cache
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.exe
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.xml
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.pdb
