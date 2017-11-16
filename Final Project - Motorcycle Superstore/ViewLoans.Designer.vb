@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ViewLoans
+Partial Class frmViewLoans
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class ViewLoans
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewLoans))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmViewLoans))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btnViewAll = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -104,15 +104,15 @@ Partial Class ViewLoans
         Me.dgvLoans.Size = New System.Drawing.Size(532, 223)
         Me.dgvLoans.TabIndex = 1
         '
-        'ViewLoans
+        'frmViewLoans
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(532, 261)
         Me.Controls.Add(Me.dgvLoans)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Name = "ViewLoans"
-        Me.Text = "ViewLoans"
+        Me.Name = "frmViewLoans"
+        Me.Text = "View Loans"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.dgvLoans, System.ComponentModel.ISupportInitialize).EndInit()

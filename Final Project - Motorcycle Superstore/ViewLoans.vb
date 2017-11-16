@@ -1,3 +1,3 @@
-﻿Public Class ViewLoans
+﻿Public Class frmViewLoans
 
 End Class
