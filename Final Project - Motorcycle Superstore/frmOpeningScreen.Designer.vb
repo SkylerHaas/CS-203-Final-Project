@@ -26,8 +26,8 @@ Partial Class frmOpeningScreen
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuInventory = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuBrowse = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSale = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAdd = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuSale = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLoans = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuPayment = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuViewLoans = New System.Windows.Forms.ToolStripMenuItem()
@@ -59,17 +59,17 @@ Partial Class frmOpeningScreen
         Me.mnuBrowse.Size = New System.Drawing.Size(152, 22)
         Me.mnuBrowse.Text = "&Browse"
         '
-        'mnuSale
-        '
-        Me.mnuSale.Name = "mnuSale"
-        Me.mnuSale.Size = New System.Drawing.Size(152, 22)
-        Me.mnuSale.Text = "Make &Sale"
-        '
         'mnuAdd
         '
         Me.mnuAdd.Name = "mnuAdd"
         Me.mnuAdd.Size = New System.Drawing.Size(152, 22)
         Me.mnuAdd.Text = "&Add"
+        '
+        'mnuSale
+        '
+        Me.mnuSale.Name = "mnuSale"
+        Me.mnuSale.Size = New System.Drawing.Size(152, 22)
+        Me.mnuSale.Text = "Make &Sale"
         '
         'mnuLoans
         '
@@ -81,13 +81,13 @@ Partial Class frmOpeningScreen
         'mnuPayment
         '
         Me.mnuPayment.Name = "mnuPayment"
-        Me.mnuPayment.Size = New System.Drawing.Size(151, 22)
+        Me.mnuPayment.Size = New System.Drawing.Size(152, 22)
         Me.mnuPayment.Text = "Enter &Payment"
         '
         'mnuViewLoans
         '
         Me.mnuViewLoans.Name = "mnuViewLoans"
-        Me.mnuViewLoans.Size = New System.Drawing.Size(151, 22)
+        Me.mnuViewLoans.Size = New System.Drawing.Size(152, 22)
         Me.mnuViewLoans.Text = "&View Loans"
         '
         'Label1
