@@ -113,6 +113,7 @@
       <DependentUpon>frmOpeningScreen.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inventory.vb" />
     <Compile Include="Motorcycle.vb" />
     <Compile Include="MotorcycleShopDataSet.Designer.vb">
       <AutoGen>True</AutoGen>

@@ -7,8 +7,9 @@
     Private mCondition As String
     Private mEngineSize As Integer
     Private mEngineCylinders As Integer
+    Private mPrice As Integer
 
-    Public Sub New(ByVal pYear As Integer, ByVal pMake, pModel, pBodyStyle As String, ByVal pMilage As Integer, ByVal pCondition As String, ByVal pEngineSize, pEngineCylinders As Integer)
+    Public Sub New(ByVal pYear As Integer, ByVal pMake As String, ByVal pModel As String, ByVal pBodyStyle As String, ByVal pMilage As Integer, ByVal pCondition As String, ByVal pEngineSize As Integer, ByVal pEngineCylinders As Integer)
         mYear = pYear
         mMake = pMake
         mModel = pModel
@@ -64,6 +65,12 @@
     Public ReadOnly Property EngineCylinders As Integer
         Get
             Return mEngineCylinders
+        End Get
+    End Property
+
+    Public ReadOnly Property Price As Integer
+        Get
+            Return mPrice
         End Get
     End Property
 

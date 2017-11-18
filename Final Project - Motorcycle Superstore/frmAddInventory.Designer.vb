@@ -31,7 +31,6 @@ Partial Class frmAddInventory
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtYear = New System.Windows.Forms.TextBox()
-        Me.txtMake = New System.Windows.Forms.TextBox()
         Me.txtModel = New System.Windows.Forms.TextBox()
         Me.txtMilage = New System.Windows.Forms.TextBox()
         Me.txtEngineSize = New System.Windows.Forms.TextBox()
@@ -39,6 +38,9 @@ Partial Class frmAddInventory
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.btnAdd = New System.Windows.Forms.Button()
+        Me.cboMake = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -120,13 +122,6 @@ Partial Class frmAddInventory
         Me.txtYear.Size = New System.Drawing.Size(100, 20)
         Me.txtYear.TabIndex = 8
         '
-        'txtMake
-        '
-        Me.txtMake.Location = New System.Drawing.Point(100, 54)
-        Me.txtMake.Name = "txtMake"
-        Me.txtMake.Size = New System.Drawing.Size(100, 20)
-        Me.txtMake.TabIndex = 9
-        '
         'txtModel
         '
         Me.txtModel.Location = New System.Drawing.Point(100, 77)
@@ -151,6 +146,7 @@ Partial Class frmAddInventory
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"New", "Used - Excellent", "Used - Very Good", "Used - Good", "Used - Fair", "Used - Poor"})
         Me.ComboBox1.Location = New System.Drawing.Point(100, 126)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(100, 21)
@@ -159,6 +155,7 @@ Partial Class frmAddInventory
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Standard", "Sport", "Supersport", "Sport-Touring", "Touring", "Cruiser", "Chopper", "Cafe Racer", "Dual-Sport", "Off-Road", "Scooter"})
         Me.ComboBox2.Location = New System.Drawing.Point(100, 149)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(100, 21)
@@ -167,6 +164,7 @@ Partial Class frmAddInventory
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "8", "10"})
         Me.ComboBox3.Location = New System.Drawing.Point(100, 195)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(100, 21)
@@ -174,18 +172,46 @@ Partial Class frmAddInventory
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(58, 237)
+        Me.btnAdd.Location = New System.Drawing.Point(58, 266)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(97, 23)
         Me.btnAdd.TabIndex = 18
         Me.btnAdd.Text = "Add to Inventory"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
+        'cboMake
+        '
+        Me.cboMake.FormattingEnabled = True
+        Me.cboMake.Items.AddRange(New Object() {"Kawasaki", "Suzuki", "Honda", "Yamaha", "Harley-Davidson", "Indian", "Triumph", "KTM"})
+        Me.cboMake.Location = New System.Drawing.Point(100, 54)
+        Me.cboMake.Name = "cboMake"
+        Me.cboMake.Size = New System.Drawing.Size(100, 21)
+        Me.cboMake.TabIndex = 19
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(25, 223)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(37, 13)
+        Me.Label9.TabIndex = 20
+        Me.Label9.Text = "Price: "
+        '
+        'txtPrice
+        '
+        Me.txtPrice.Location = New System.Drawing.Point(100, 220)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrice.TabIndex = 21
+        '
         'frmAddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(235, 288)
+        Me.ClientSize = New System.Drawing.Size(235, 314)
+        Me.Controls.Add(Me.txtPrice)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.cboMake)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.ComboBox2)
@@ -193,7 +219,6 @@ Partial Class frmAddInventory
         Me.Controls.Add(Me.txtEngineSize)
         Me.Controls.Add(Me.txtMilage)
         Me.Controls.Add(Me.txtModel)
-        Me.Controls.Add(Me.txtMake)
         Me.Controls.Add(Me.txtYear)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -219,7 +244,6 @@ Partial Class frmAddInventory
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents txtYear As TextBox
-    Friend WithEvents txtMake As TextBox
     Friend WithEvents txtModel As TextBox
     Friend WithEvents txtMilage As TextBox
     Friend WithEvents txtEngineSize As TextBox
@@ -227,4 +251,7 @@ Partial Class frmAddInventory
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents btnAdd As Button
+    Friend WithEvents cboMake As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtPrice As TextBox
 End Class
