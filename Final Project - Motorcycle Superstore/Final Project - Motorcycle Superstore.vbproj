@@ -66,6 +66,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -111,6 +112,12 @@
     <Compile Include="frmOpeningScreen.Designer.vb">
       <DependentUpon>frmOpeningScreen.vb</DependentUpon>
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motorcycle.vb" />
+    <Compile Include="MotorcycleShopDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MotorcycleShopDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -167,6 +174,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="MotorcycleShopDataSet.xsc">
+      <DependentUpon>MotorcycleShopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MotorcycleShopDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MotorcycleShopDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="MotorcycleShopDataSet.xss">
+      <DependentUpon>MotorcycleShopDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -179,12 +197,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Inventory.mdf">
+    <Content Include="MotorcycleShopDataSet.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inventory_log.ldf">
+    <Content Include="MotorcycleShopDataSet_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Inventory.mdf</DependentUpon>
+      <DependentUpon>MotorcycleShopDataSet.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
