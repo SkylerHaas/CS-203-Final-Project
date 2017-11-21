@@ -16,7 +16,7 @@
     Public Function Insert(ByVal mc As Motorcycle) As Boolean
         Try
             LastError = String.Empty
-            adapter.Insert(mc.Year, mc.Make, mc.Model, mc.BodyStyle, mc.Milage, mc.Condition, mc.EngineSize, mc.EngineCylinders, mc.Price, CType(Today, String), CType(Today, String))
+            adapter.Insert(mc.Year, mc.Make, mc.Model, mc.BodyStyle, mc.Milage, mc.Condition, mc.EngineSize, mc.EngineCylinders, mc.Price, Today, Today)
             Return True
         Catch ex As Exception
             LastError = ex.Message
@@ -25,8 +25,13 @@
     End Function
 
     Public Function UpdatePrices() As Boolean
-        adapter.UpdatePrices(DISCOUNT_NEW_FACTOR, "New", DISCOUNT_NEW_PERIOD)
-        adapter.UpdatePrices(DISCOUNT_USED_FACTOR, "Used", DISCOUNT_USED_PERIOD)
+        Dim answer As Boolean = False
+        Dim rows As Integer = 0
+        rows = rows + adapter.UpdatePrices(DISCOUNT_NEW_FACTOR, "New", DISCOUNT_NEW_PERIOD) + adapter.UpdatePrices(DISCOUNT_USED_FACTOR, "Used", DISCOUNT_USED_PERIOD)
+        If (rows > 0) Then
+            answer = True
+        End If
+        Return answer
     End Function
 
 End Class
