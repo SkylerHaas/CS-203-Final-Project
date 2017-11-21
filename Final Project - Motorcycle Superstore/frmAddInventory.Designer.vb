@@ -22,6 +22,7 @@ Partial Class frmAddInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -34,13 +35,15 @@ Partial Class frmAddInventory
         Me.txtModel = New System.Windows.Forms.TextBox()
         Me.txtMilage = New System.Windows.Forms.TextBox()
         Me.txtEngineSize = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cboCondition = New System.Windows.Forms.ComboBox()
+        Me.cboBodyStyle = New System.Windows.Forms.ComboBox()
+        Me.cboEngineCylinders = New System.Windows.Forms.ComboBox()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.cboMake = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.errorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.errorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -143,32 +146,32 @@ Partial Class frmAddInventory
         Me.txtEngineSize.Size = New System.Drawing.Size(100, 20)
         Me.txtEngineSize.TabIndex = 14
         '
-        'ComboBox1
+        'cboCondition
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"New", "Used - Excellent", "Used - Very Good", "Used - Good", "Used - Fair", "Used - Poor"})
-        Me.ComboBox1.Location = New System.Drawing.Point(100, 126)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox1.TabIndex = 15
+        Me.cboCondition.FormattingEnabled = True
+        Me.cboCondition.Items.AddRange(New Object() {"New", "Used - Excellent", "Used - Very Good", "Used - Good", "Used - Fair", "Used - Poor"})
+        Me.cboCondition.Location = New System.Drawing.Point(100, 126)
+        Me.cboCondition.Name = "cboCondition"
+        Me.cboCondition.Size = New System.Drawing.Size(100, 21)
+        Me.cboCondition.TabIndex = 15
         '
-        'ComboBox2
+        'cboBodyStyle
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Standard", "Sport", "Supersport", "Sport-Touring", "Touring", "Cruiser", "Chopper", "Cafe Racer", "Dual-Sport", "Off-Road", "Scooter"})
-        Me.ComboBox2.Location = New System.Drawing.Point(100, 149)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox2.TabIndex = 16
+        Me.cboBodyStyle.FormattingEnabled = True
+        Me.cboBodyStyle.Items.AddRange(New Object() {"Standard", "Sport", "Supersport", "Sport-Touring", "Touring", "Cruiser", "Chopper", "Cafe Racer", "Dual-Sport", "Off-Road", "Scooter"})
+        Me.cboBodyStyle.Location = New System.Drawing.Point(100, 149)
+        Me.cboBodyStyle.Name = "cboBodyStyle"
+        Me.cboBodyStyle.Size = New System.Drawing.Size(100, 21)
+        Me.cboBodyStyle.TabIndex = 16
         '
-        'ComboBox3
+        'cboEngineCylinders
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "8", "10"})
-        Me.ComboBox3.Location = New System.Drawing.Point(100, 195)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox3.TabIndex = 17
+        Me.cboEngineCylinders.FormattingEnabled = True
+        Me.cboEngineCylinders.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "8", "10"})
+        Me.cboEngineCylinders.Location = New System.Drawing.Point(100, 195)
+        Me.cboEngineCylinders.Name = "cboEngineCylinders"
+        Me.cboEngineCylinders.Size = New System.Drawing.Size(100, 21)
+        Me.cboEngineCylinders.TabIndex = 17
         '
         'btnAdd
         '
@@ -204,6 +207,10 @@ Partial Class frmAddInventory
         Me.txtPrice.Size = New System.Drawing.Size(100, 20)
         Me.txtPrice.TabIndex = 21
         '
+        'errorProvider
+        '
+        Me.errorProvider.ContainerControl = Me
+        '
         'frmAddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,9 +220,9 @@ Partial Class frmAddInventory
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cboMake)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cboEngineCylinders)
+        Me.Controls.Add(Me.cboBodyStyle)
+        Me.Controls.Add(Me.cboCondition)
         Me.Controls.Add(Me.txtEngineSize)
         Me.Controls.Add(Me.txtMilage)
         Me.Controls.Add(Me.txtModel)
@@ -230,6 +237,7 @@ Partial Class frmAddInventory
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmAddInventory"
         Me.Text = "frmAddInventory"
+        CType(Me.errorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -247,11 +255,12 @@ Partial Class frmAddInventory
     Friend WithEvents txtModel As TextBox
     Friend WithEvents txtMilage As TextBox
     Friend WithEvents txtEngineSize As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents cboCondition As ComboBox
+    Friend WithEvents cboBodyStyle As ComboBox
+    Friend WithEvents cboEngineCylinders As ComboBox
     Friend WithEvents btnAdd As Button
     Friend WithEvents cboMake As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtPrice As TextBox
+    Friend WithEvents errorProvider As ErrorProvider
 End Class

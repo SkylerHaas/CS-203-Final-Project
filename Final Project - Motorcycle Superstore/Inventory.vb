@@ -1,6 +1,10 @@
 ﻿Public Class Inventory
 
     Private adapter As New MotorcycleShopDataSetTableAdapters.InventoryTableAdapter
+    Private Const DISCOUNT_NEW_PERIOD As Integer = 6    '6 months is the period of time a new bike can sit before getting discounted
+    Private Const DISCOUNT_USED_PERIOD As Integer = 1   '1 month is the period of time a used bike can sit before getting discounted
+    Private Const DISCOUNT_NEW_FACTOR As Decimal = 0.8D   'after 6 months of sitting, new inventory will be reduced by 20%
+    Private Const DISCOUNT_USED_FACTOR As Decimal = 0.9D  'after 1 months of sitting, used inventory will be reduced by 10%
     Public Shared Property LastError As String
 
     Public ReadOnly Property Items As DataTable
@@ -18,6 +22,11 @@
             LastError = ex.Message
             Return False
         End Try
+    End Function
+
+    Public Function UpdatePrices() As Boolean
+        adapter.UpdatePrices(DISCOUNT_NEW_FACTOR, "New", DISCOUNT_NEW_PERIOD)
+        adapter.UpdatePrices(DISCOUNT_USED_FACTOR, "Used", DISCOUNT_USED_PERIOD)
     End Function
 
 End Class

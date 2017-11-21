@@ -120,6 +120,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MotorcycleShopDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MotorcycleShopDataSet.vb">
+      <DependentUpon>MotorcycleShopDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

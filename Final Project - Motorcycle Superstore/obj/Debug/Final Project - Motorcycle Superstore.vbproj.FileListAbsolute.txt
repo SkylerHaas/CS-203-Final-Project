@@ -13,3 +13,8 @@ C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Moto
 C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.exe
 C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.xml
 C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.pdb
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\bin\Debug\MotorcycleShopDataSet.mdf
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\bin\Debug\MotorcycleShopDataSet_log.ldf
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\WindowsApplication1.frmAddInventory.resources
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\WindowsApplication1.frmLoanPayment.resources
+C:\Users\skyda\Desktop\GitHub Projects\CS 203 Final Project\Final Project - Motorcycle Superstore\obj\Debug\Final Project - Motorcycle Superstore.vbproj.CoreCompileInputs.cache

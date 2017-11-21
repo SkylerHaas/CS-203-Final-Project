@@ -81,13 +81,13 @@ Partial Class frmOpeningScreen
         'mnuPayment
         '
         Me.mnuPayment.Name = "mnuPayment"
-        Me.mnuPayment.Size = New System.Drawing.Size(152, 22)
+        Me.mnuPayment.Size = New System.Drawing.Size(151, 22)
         Me.mnuPayment.Text = "Enter &Payment"
         '
         'mnuViewLoans
         '
         Me.mnuViewLoans.Name = "mnuViewLoans"
-        Me.mnuViewLoans.Size = New System.Drawing.Size(152, 22)
+        Me.mnuViewLoans.Size = New System.Drawing.Size(151, 22)
         Me.mnuViewLoans.Text = "&View Loans"
         '
         'Label1

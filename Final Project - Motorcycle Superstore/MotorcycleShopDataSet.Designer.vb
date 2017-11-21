@@ -475,7 +475,7 @@ Partial Public Class MotorcycleShopDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddInventoryRow(ByVal Year As Integer, ByVal Make As String, ByVal Model As String, ByVal BodyStyle As String, ByVal Milage As Integer, ByVal Condition As String, ByVal EngineSize As Integer, ByVal EngineCylinders As Integer, ByVal Price As Integer, ByVal DateAdded As Date, ByVal DateLastPriceAdjusted As Date) As InventoryRow
+        Public Overloads Function AddInventoryRow(ByVal Year As Integer, ByVal Make As String, ByVal Model As String, ByVal BodyStyle As String, ByVal Milage As Integer, ByVal Condition As String, ByVal EngineSize As Integer, ByVal EngineCylinders As Integer, ByVal Price As Decimal, ByVal DateAdded As Date, ByVal DateLastPriceAdjusted As Date) As InventoryRow
             Dim rowInventoryRow As InventoryRow = CType(Me.NewRow,InventoryRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Year, Make, Model, BodyStyle, Milage, Condition, EngineSize, EngineCylinders, Price, DateAdded, DateLastPriceAdjusted}
             rowInventoryRow.ItemArray = columnValuesArray
@@ -541,7 +541,7 @@ Partial Public Class MotorcycleShopDataSet
             MyBase.Columns.Add(Me.columnEngineSize)
             Me.columnEngineCylinders = New Global.System.Data.DataColumn("EngineCylinders", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEngineCylinders)
-            Me.columnPrice = New Global.System.Data.DataColumn("Price", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnPrice = New Global.System.Data.DataColumn("Price", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPrice)
             Me.columnDateAdded = New Global.System.Data.DataColumn("DateAdded", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDateAdded)
@@ -813,10 +813,10 @@ Partial Public Class MotorcycleShopDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Price() As Integer
+        Public Property Price() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableInventory.PriceColumn),Integer)
+                    Return CType(Me(Me.tableInventory.PriceColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Price' in table 'Inventory' is DBNull.", e)
                 End Try
@@ -1060,30 +1060,30 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EngineSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EngineCylinders", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineCylinders", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Price", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Price", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateAdded", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateAdded", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateLastPriceAdjusted", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateLastPriceAdjusted", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO Inventory"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Year, Make, Model, BodyStyle, Mi"& _ 
-                "lage, Condition, EngineSize, EngineCylinders, Price, DateAdded, DateLastPriceAdj"& _ 
-                "usted)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@Year,@Make,@Model,@BodyStyle,@Milage,@Condition,@EngineS"& _ 
-                "ize,@EngineCylinders,@Price,@DateAdded,@DateLastPriceAdjusted);  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Invent"& _ 
-                "oryId, Year, Make, Model, BodyStyle, Milage, Condition, EngineSize, EngineCylind"& _ 
-                "ers, Price, DateAdded, DateLastPriceAdjusted FROM Inventory WHERE (InventoryId ="& _ 
-                " SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Inventory] ([Year], [Make], [Model], [BodyStyle], [Milage], [C"& _ 
+                "ondition], [EngineSize], [EngineCylinders], [Price], [DateAdded], [DateLastPrice"& _ 
+                "Adjusted]) VALUES (@Year, @Make, @Model, @BodyStyle, @Milage, @Condition, @Engin"& _ 
+                "eSize, @EngineCylinders, @Price, @DateAdded, @DateLastPriceAdjusted);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT In"& _ 
+                "ventoryId, Year, Make, Model, BodyStyle, Milage, Condition, EngineSize, EngineCy"& _ 
+                "linders, Price, DateAdded, DateLastPriceAdjusted FROM Inventory WHERE (Inventory"& _ 
+                "Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Year", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Year", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Make", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "Make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Model", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BodyStyle", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "BodyStyle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Milage", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Milage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Condition", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Condition", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EngineSize", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EngineCylinders", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineCylinders", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DateAdded", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "DateAdded", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DateLastPriceAdjusted", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "DateLastPriceAdjusted", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Year", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Year", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Make", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Model", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BodyStyle", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BodyStyle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Milage", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Milage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Condition", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Condition", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EngineSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EngineCylinders", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineCylinders", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DateAdded", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateAdded", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DateLastPriceAdjusted", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateLastPriceAdjusted", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Inventory] SET [Year] = @Year, [Make] = @Make, [Model] = @Model, [B"& _ 
@@ -1108,7 +1108,7 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Condition", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Condition", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EngineSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EngineCylinders", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineCylinders", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DateAdded", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateAdded", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DateLastPriceAdjusted", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateLastPriceAdjusted", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InventoryId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -1121,7 +1121,7 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EngineSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EngineCylinders", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EngineCylinders", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Price", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Price", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateAdded", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateAdded", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateLastPriceAdjusted", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateLastPriceAdjusted", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InventoryId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1145,17 +1145,13 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "UPDATE [dbo].[Inventory] SET [Price] = @Price, [DateLastPriceAdjusted] = @DateLas"& _ 
-                "tPriceAdjusted"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (([Condition] = @Original_Condition) AND ([DateLastPriceAd"& _ 
-                "justed] <= @Original_DateLastPriceAdjusted));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT InventoryId, Year, Make, M"& _ 
-                "odel, BodyStyle, Milage, Condition, EngineSize, EngineCylinders, Price, DateAdde"& _ 
-                "d, DateLastPriceAdjusted"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM Inventory"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (InventoryId = @InventoryId)"
+            Me._commandCollection(1).CommandText = "UPDATE       Inventory"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                Price = Price * @PriceChange, DateLast"& _ 
+                "PriceAdjusted = GETDATE()"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Condition LIKE @Condition + '%') AND (D"& _ 
+                "ATEDIFF(month, DateLastPriceAdjusted, GETDATE()) >= @DiscountPeriod)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DateLastPriceAdjusted", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "DateLastPriceAdjusted", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Condition", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Condition", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateLastPriceAdjusted", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "DateLastPriceAdjusted", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InventoryId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PriceChange", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Condition", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Condition", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DiscountPeriod", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1214,7 +1210,7 @@ Namespace MotorcycleShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_InventoryId As Integer, ByVal Original_Year As Integer, ByVal Original_Make As String, ByVal Original_Model As String, ByVal Original_BodyStyle As String, ByVal Original_Milage As Integer, ByVal Original_Condition As String, ByVal Original_EngineSize As Integer, ByVal Original_EngineCylinders As Integer, ByVal Original_Price As Global.System.Nullable(Of Integer), ByVal Original_DateAdded As Date, ByVal Original_DateLastPriceAdjusted As Date) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_InventoryId As Integer, ByVal Original_Year As Integer, ByVal Original_Make As String, ByVal Original_Model As String, ByVal Original_BodyStyle As String, ByVal Original_Milage As Integer, ByVal Original_Condition As String, ByVal Original_EngineSize As Integer, ByVal Original_EngineCylinders As Integer, ByVal Original_Price As Global.System.Nullable(Of Decimal), ByVal Original_DateAdded As Date, ByVal Original_DateLastPriceAdjusted As Date) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_InventoryId,Integer)
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Year,Integer)
             If (Original_Make Is Nothing) Then
@@ -1242,7 +1238,7 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_EngineCylinders,Integer)
             If (Original_Price.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Price.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Price.Value,Decimal)
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
@@ -1268,7 +1264,7 @@ Namespace MotorcycleShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Year As Integer, ByVal Make As String, ByVal Model As String, ByVal BodyStyle As String, ByVal Milage As Integer, ByVal Condition As String, ByVal EngineSize As Integer, ByVal EngineCylinders As Integer, ByVal Price As Global.System.Nullable(Of Integer), ByVal DateAdded As String, ByVal DateLastPriceAdjusted As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Year As Integer, ByVal Make As String, ByVal Model As String, ByVal BodyStyle As String, ByVal Milage As Integer, ByVal Condition As String, ByVal EngineSize As Integer, ByVal EngineCylinders As Integer, ByVal Price As Global.System.Nullable(Of Decimal), ByVal DateAdded As Date, ByVal DateLastPriceAdjusted As Date) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(Year,Integer)
             If (Make Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Make")
@@ -1294,20 +1290,12 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me.Adapter.InsertCommand.Parameters(6).Value = CType(EngineSize,Integer)
             Me.Adapter.InsertCommand.Parameters(7).Value = CType(EngineCylinders,Integer)
             If (Price.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Price.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Price.Value,Decimal)
             Else
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            If (DateAdded Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("DateAdded")
-            Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(DateAdded,String)
-            End If
-            If (DateLastPriceAdjusted Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("DateLastPriceAdjusted")
-            Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(DateLastPriceAdjusted,String)
-            End If
+            Me.Adapter.InsertCommand.Parameters(9).Value = CType(DateAdded,Date)
+            Me.Adapter.InsertCommand.Parameters(10).Value = CType(DateLastPriceAdjusted,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1336,7 +1324,7 @@ Namespace MotorcycleShopDataSetTableAdapters
                     ByVal Condition As String,  _
                     ByVal EngineSize As Integer,  _
                     ByVal EngineCylinders As Integer,  _
-                    ByVal Price As Global.System.Nullable(Of Integer),  _
+                    ByVal Price As Global.System.Nullable(Of Decimal),  _
                     ByVal DateAdded As Date,  _
                     ByVal DateLastPriceAdjusted As Date,  _
                     ByVal Original_InventoryId As Integer,  _
@@ -1348,7 +1336,7 @@ Namespace MotorcycleShopDataSetTableAdapters
                     ByVal Original_Condition As String,  _
                     ByVal Original_EngineSize As Integer,  _
                     ByVal Original_EngineCylinders As Integer,  _
-                    ByVal Original_Price As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_Price As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_DateAdded As Date,  _
                     ByVal Original_DateLastPriceAdjusted As Date,  _
                     ByVal InventoryId As Integer) As Integer
@@ -1377,7 +1365,7 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(6).Value = CType(EngineSize,Integer)
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(EngineCylinders,Integer)
             If (Price.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Price.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Price.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
@@ -1410,7 +1398,7 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_EngineCylinders,Integer)
             If (Original_Price.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Price.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Price.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
@@ -1446,7 +1434,7 @@ Namespace MotorcycleShopDataSetTableAdapters
                     ByVal Condition As String,  _
                     ByVal EngineSize As Integer,  _
                     ByVal EngineCylinders As Integer,  _
-                    ByVal Price As Global.System.Nullable(Of Integer),  _
+                    ByVal Price As Global.System.Nullable(Of Decimal),  _
                     ByVal DateAdded As Date,  _
                     ByVal DateLastPriceAdjusted As Date,  _
                     ByVal Original_InventoryId As Integer,  _
@@ -1458,7 +1446,7 @@ Namespace MotorcycleShopDataSetTableAdapters
                     ByVal Original_Condition As String,  _
                     ByVal Original_EngineSize As Integer,  _
                     ByVal Original_EngineCylinders As Integer,  _
-                    ByVal Original_Price As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_Price As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_DateAdded As Date,  _
                     ByVal Original_DateLastPriceAdjusted As Date) As Integer
             Return Me.Update(Year, Make, Model, BodyStyle, Milage, Condition, EngineSize, EngineCylinders, Price, DateAdded, DateLastPriceAdjusted, Original_InventoryId, Original_Year, Original_Make, Original_Model, Original_BodyStyle, Original_Milage, Original_Condition, Original_EngineSize, Original_EngineCylinders, Original_Price, Original_DateAdded, Original_DateLastPriceAdjusted, Original_InventoryId)
@@ -1468,29 +1456,19 @@ Namespace MotorcycleShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function UpdatePrices(ByVal Price As Global.System.Nullable(Of Integer), ByVal DateLastPriceAdjusted As String, ByVal Original_Condition As String, ByVal Original_DateLastPriceAdjusted As String, ByVal InventoryId As Integer) As Integer
+        Public Overloads Overridable Function UpdatePrices(ByVal PriceChange As Global.System.Nullable(Of Decimal), ByVal Condition As String, ByVal DiscountPeriod As Decimal) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
-            If (Price.HasValue = true) Then
-                command.Parameters(0).Value = CType(Price.Value,Integer)
+            If (PriceChange.HasValue = true) Then
+                command.Parameters(0).Value = CType(PriceChange.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (DateLastPriceAdjusted Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("DateLastPriceAdjusted")
+            If (Condition Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Condition")
             Else
-                command.Parameters(1).Value = CType(DateLastPriceAdjusted,String)
+                command.Parameters(1).Value = CType(Condition,String)
             End If
-            If (Original_Condition Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Condition")
-            Else
-                command.Parameters(2).Value = CType(Original_Condition,String)
-            End If
-            If (Original_DateLastPriceAdjusted Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_DateLastPriceAdjusted")
-            Else
-                command.Parameters(3).Value = CType(Original_DateLastPriceAdjusted,String)
-            End If
-            command.Parameters(4).Value = CType(InventoryId,Integer)
+            command.Parameters(2).Value = CType(DiscountPeriod,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then

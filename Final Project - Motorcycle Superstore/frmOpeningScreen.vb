@@ -1,6 +1,9 @@
 ﻿Public Class frmOpeningScreen
-    Private Sub frmOpeningScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private inventory As Inventory
+
+    Private Sub frmOpeningScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        inventory.UpdatePrices
     End Sub
 
     Private Sub mnuPayment_Click(sender As Object, e As EventArgs) Handles mnuPayment.Click
@@ -16,6 +19,10 @@
     End Sub
 
     Private Sub mnuAdd_Click(sender As Object, e As EventArgs) Handles mnuAdd.Click
-        frmAddInventory.showDialog
+        frmAddInventory.ShowDialog()
+    End Sub
+
+    Private Sub mnuSale_Click(sender As Object, e As EventArgs) Handles mnuSale.Click
+        frmSellInventory.ShowDialog()
     End Sub
 End Class

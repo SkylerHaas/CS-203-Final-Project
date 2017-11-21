@@ -7,9 +7,9 @@
     Private mCondition As String
     Private mEngineSize As Integer
     Private mEngineCylinders As Integer
-    Private mPrice As Integer
+    Private mPrice As Decimal
 
-    Public Sub New(ByVal pYear As Integer, ByVal pMake As String, ByVal pModel As String, ByVal pBodyStyle As String, ByVal pMilage As Integer, ByVal pCondition As String, ByVal pEngineSize As Integer, ByVal pEngineCylinders As Integer)
+    Public Sub New(ByVal pYear As Integer, ByVal pMake As String, ByVal pModel As String, ByVal pBodyStyle As String, ByVal pMilage As Integer, ByVal pCondition As String, ByVal pEngineSize As Integer, ByVal pEngineCylinders As Integer, ByVal pPrice As Decimal)
         mYear = pYear
         mMake = pMake
         mModel = pModel
@@ -18,6 +18,7 @@
         mCondition = pCondition
         mEngineSize = pEngineSize
         mEngineCylinders = pEngineCylinders
+        mPrice = pPrice
     End Sub
 
     Public ReadOnly Property Year As Integer
@@ -68,7 +69,7 @@
         End Get
     End Property
 
-    Public ReadOnly Property Price As Integer
+    Public ReadOnly Property Price As Decimal
         Get
             Return mPrice
         End Get
