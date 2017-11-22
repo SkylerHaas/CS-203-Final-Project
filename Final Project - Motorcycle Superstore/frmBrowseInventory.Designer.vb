@@ -25,19 +25,6 @@ Partial Class frmBrowseInventory
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBrowseInventory))
         Me.dgvInventory = New System.Windows.Forms.DataGridView()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btnViewAll = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.cboBodyStyle = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.cboMake = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btnSell = New System.Windows.Forms.ToolStripButton()
-        Me.MotorcycleShopDataSet = New WindowsApplication1.MotorcycleShopDataSet()
-        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.InventoryTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.InventoryTableAdapter()
         Me.InventoryIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.YearDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MakeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,10 +37,25 @@ Partial Class frmBrowseInventory
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateAddedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateLastPriceAdjustedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MotorcycleShopDataSet = New WindowsApplication1.MotorcycleShopDataSet()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.btnViewAll = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.cboBodyStyle = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.cboMake = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btnSell = New System.Windows.Forms.ToolStripButton()
+        Me.InventoryTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.InventoryTableAdapter()
+        Me.InventoryBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
-        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
+        CType(Me.InventoryBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvInventory
@@ -65,89 +67,11 @@ Partial Class frmBrowseInventory
         Me.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIdDataGridViewTextBoxColumn, Me.YearDataGridViewTextBoxColumn, Me.MakeDataGridViewTextBoxColumn, Me.ModelDataGridViewTextBoxColumn, Me.BodyStyleDataGridViewTextBoxColumn, Me.MilageDataGridViewTextBoxColumn, Me.ConditionDataGridViewTextBoxColumn, Me.EngineSizeDataGridViewTextBoxColumn, Me.EngineCylindersDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.DateAddedDataGridViewTextBoxColumn, Me.DateLastPriceAdjustedDataGridViewTextBoxColumn})
-        Me.dgvInventory.DataSource = Me.InventoryBindingSource
+        Me.dgvInventory.DataSource = Me.InventoryBindingSource1
         Me.dgvInventory.Location = New System.Drawing.Point(0, 41)
         Me.dgvInventory.Name = "dgvInventory"
         Me.dgvInventory.Size = New System.Drawing.Size(994, 220)
         Me.dgvInventory.TabIndex = 0
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnViewAll, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboBodyStyle, Me.ToolStripSeparator2, Me.ToolStripLabel2, Me.cboMake, Me.ToolStripSeparator3, Me.btnSell})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(994, 25)
-        Me.ToolStrip1.TabIndex = 1
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'btnViewAll
-        '
-        Me.btnViewAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.btnViewAll.Image = CType(resources.GetObject("btnViewAll.Image"), System.Drawing.Image)
-        Me.btnViewAll.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnViewAll.Name = "btnViewAll"
-        Me.btnViewAll.Size = New System.Drawing.Size(53, 22)
-        Me.btnViewAll.Text = "View All"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(65, 22)
-        Me.ToolStripLabel1.Text = "Body Style:"
-        '
-        'cboBodyStyle
-        '
-        Me.cboBodyStyle.Name = "cboBodyStyle"
-        Me.cboBodyStyle.Size = New System.Drawing.Size(121, 25)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(42, 22)
-        Me.ToolStripLabel2.Text = "Make: "
-        '
-        'cboMake
-        '
-        Me.cboMake.Name = "cboMake"
-        Me.cboMake.Size = New System.Drawing.Size(121, 25)
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
-        '
-        'btnSell
-        '
-        Me.btnSell.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.btnSell.Image = CType(resources.GetObject("btnSell.Image"), System.Drawing.Image)
-        Me.btnSell.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnSell.Name = "btnSell"
-        Me.btnSell.Size = New System.Drawing.Size(29, 22)
-        Me.btnSell.Text = "Sell"
-        '
-        'MotorcycleShopDataSet
-        '
-        Me.MotorcycleShopDataSet.DataSetName = "MotorcycleShopDataSet"
-        Me.MotorcycleShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'InventoryBindingSource
-        '
-        Me.InventoryBindingSource.DataMember = "Inventory"
-        Me.InventoryBindingSource.DataSource = Me.MotorcycleShopDataSet
-        '
-        'InventoryTableAdapter
-        '
-        Me.InventoryTableAdapter.ClearBeforeFill = True
         '
         'InventoryIdDataGridViewTextBoxColumn
         '
@@ -234,6 +158,89 @@ Partial Class frmBrowseInventory
         Me.DateLastPriceAdjustedDataGridViewTextBoxColumn.Name = "DateLastPriceAdjustedDataGridViewTextBoxColumn"
         Me.DateLastPriceAdjustedDataGridViewTextBoxColumn.Width = 140
         '
+        'InventoryBindingSource
+        '
+        Me.InventoryBindingSource.DataMember = "Inventory"
+        Me.InventoryBindingSource.DataSource = Me.MotorcycleShopDataSet
+        '
+        'MotorcycleShopDataSet
+        '
+        Me.MotorcycleShopDataSet.DataSetName = "MotorcycleShopDataSet"
+        Me.MotorcycleShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnViewAll, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboBodyStyle, Me.ToolStripSeparator2, Me.ToolStripLabel2, Me.cboMake, Me.ToolStripSeparator3, Me.btnSell})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(994, 25)
+        Me.ToolStrip1.TabIndex = 1
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'btnViewAll
+        '
+        Me.btnViewAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.btnViewAll.Image = CType(resources.GetObject("btnViewAll.Image"), System.Drawing.Image)
+        Me.btnViewAll.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnViewAll.Name = "btnViewAll"
+        Me.btnViewAll.Size = New System.Drawing.Size(53, 22)
+        Me.btnViewAll.Text = "View All"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(65, 22)
+        Me.ToolStripLabel1.Text = "Body Style:"
+        '
+        'cboBodyStyle
+        '
+        Me.cboBodyStyle.Name = "cboBodyStyle"
+        Me.cboBodyStyle.Size = New System.Drawing.Size(121, 25)
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(42, 22)
+        Me.ToolStripLabel2.Text = "Make: "
+        '
+        'cboMake
+        '
+        Me.cboMake.Name = "cboMake"
+        Me.cboMake.Size = New System.Drawing.Size(121, 25)
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
+        '
+        'btnSell
+        '
+        Me.btnSell.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.btnSell.Image = CType(resources.GetObject("btnSell.Image"), System.Drawing.Image)
+        Me.btnSell.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnSell.Name = "btnSell"
+        Me.btnSell.Size = New System.Drawing.Size(29, 22)
+        Me.btnSell.Text = "Sell"
+        '
+        'InventoryTableAdapter
+        '
+        Me.InventoryTableAdapter.ClearBeforeFill = True
+        '
+        'InventoryBindingSource1
+        '
+        Me.InventoryBindingSource1.DataMember = "Inventory"
+        Me.InventoryBindingSource1.DataSource = Me.MotorcycleShopDataSet
+        '
         'frmBrowseInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -244,10 +251,11 @@ Partial Class frmBrowseInventory
         Me.Name = "frmBrowseInventory"
         Me.Text = "Browse Inventory"
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -279,4 +287,5 @@ Partial Class frmBrowseInventory
     Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateAddedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateLastPriceAdjustedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InventoryBindingSource1 As BindingSource
 End Class

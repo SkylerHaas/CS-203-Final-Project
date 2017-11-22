@@ -34,4 +34,20 @@
         Return answer
     End Function
 
+    Public Function GetCurrentInventory() As DataTable
+        Return adapter.GetCurrentInventory()
+    End Function
+
+    Public Function GetCurrentInventoryByMake(ByVal make As String) As DataTable
+        Return adapter.GetCurrentInventoryByMake(make)
+    End Function
+
+    Public Function GetCurrentInventoryByBodyStyle(ByVal bodyStyle As String) As DataTable
+        Return adapter.GetCurrentInventoryByBodyStyle(bodyStyle)
+    End Function
+
+    Public Function GetCurrentInventoryByBodyStyleAndMake(ByVal make As String, ByVal bodyStyle As String) As DataTable
+        Return adapter.GetCurrentInventoryByBodyStyleAndMake(make, bodyStyle)
+    End Function
+
 End Class
