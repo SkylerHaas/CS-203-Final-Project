@@ -37,8 +37,9 @@ Partial Class frmBrowseInventory
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateAddedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateLastPriceAdjustedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InventoryBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.MotorcycleShopDataSet = New WindowsApplication1.MotorcycleShopDataSet()
+        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btnViewAll = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -50,12 +51,11 @@ Partial Class frmBrowseInventory
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnSell = New System.Windows.Forms.ToolStripButton()
         Me.InventoryTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.InventoryTableAdapter()
-        Me.InventoryBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
         CType(Me.InventoryBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvInventory
@@ -158,15 +158,20 @@ Partial Class frmBrowseInventory
         Me.DateLastPriceAdjustedDataGridViewTextBoxColumn.Name = "DateLastPriceAdjustedDataGridViewTextBoxColumn"
         Me.DateLastPriceAdjustedDataGridViewTextBoxColumn.Width = 140
         '
-        'InventoryBindingSource
+        'InventoryBindingSource1
         '
-        Me.InventoryBindingSource.DataMember = "Inventory"
-        Me.InventoryBindingSource.DataSource = Me.MotorcycleShopDataSet
+        Me.InventoryBindingSource1.DataMember = "Inventory"
+        Me.InventoryBindingSource1.DataSource = Me.MotorcycleShopDataSet
         '
         'MotorcycleShopDataSet
         '
         Me.MotorcycleShopDataSet.DataSetName = "MotorcycleShopDataSet"
         Me.MotorcycleShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'InventoryBindingSource
+        '
+        Me.InventoryBindingSource.DataMember = "Inventory"
+        Me.InventoryBindingSource.DataSource = Me.MotorcycleShopDataSet
         '
         'ToolStrip1
         '
@@ -236,11 +241,6 @@ Partial Class frmBrowseInventory
         '
         Me.InventoryTableAdapter.ClearBeforeFill = True
         '
-        'InventoryBindingSource1
-        '
-        Me.InventoryBindingSource1.DataMember = "Inventory"
-        Me.InventoryBindingSource1.DataSource = Me.MotorcycleShopDataSet
-        '
         'frmBrowseInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -251,11 +251,11 @@ Partial Class frmBrowseInventory
         Me.Name = "frmBrowseInventory"
         Me.Text = "Browse Inventory"
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.InventoryBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
