@@ -43,11 +43,9 @@ Partial Class frmAddInventory
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.cboMake = New System.Windows.Forms.ComboBox()
         Me.ManufacturersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MotorcycleShopDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.errorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.MotorcycleShopDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.InventoryTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.InventoryTableAdapter()
         Me.ManufacturersTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.ManufacturersTableAdapter()
@@ -59,9 +57,7 @@ Partial Class frmAddInventory
         CType(Me.BodyStylesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ManufacturersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MotorcycleShopDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MotorcycleShopDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CylindersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConditionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,11 +231,6 @@ Partial Class frmAddInventory
         Me.ManufacturersBindingSource.DataMember = "Manufacturers"
         Me.ManufacturersBindingSource.DataSource = Me.MotorcycleShopDataSet
         '
-        'MotorcycleShopDataSetBindingSource
-        '
-        Me.MotorcycleShopDataSetBindingSource.DataSource = Me.MotorcycleShopDataSet
-        Me.MotorcycleShopDataSetBindingSource.Position = 0
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -259,11 +250,6 @@ Partial Class frmAddInventory
         'errorProvider
         '
         Me.errorProvider.ContainerControl = Me
-        '
-        'MotorcycleShopDataSetBindingSource1
-        '
-        Me.MotorcycleShopDataSetBindingSource1.DataSource = Me.MotorcycleShopDataSet
-        Me.MotorcycleShopDataSetBindingSource1.Position = 0
         '
         'InventoryBindingSource
         '
@@ -329,9 +315,7 @@ Partial Class frmAddInventory
         CType(Me.BodyStylesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ManufacturersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MotorcycleShopDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errorProvider, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MotorcycleShopDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CylindersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConditionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -361,8 +345,6 @@ Partial Class frmAddInventory
     Friend WithEvents txtPrice As TextBox
     Friend WithEvents errorProvider As ErrorProvider
     Friend WithEvents MotorcycleShopDataSet As MotorcycleShopDataSet
-    Friend WithEvents MotorcycleShopDataSetBindingSource As BindingSource
-    Friend WithEvents MotorcycleShopDataSetBindingSource1 As BindingSource
     Friend WithEvents InventoryBindingSource As BindingSource
     Friend WithEvents InventoryTableAdapter As MotorcycleShopDataSetTableAdapters.InventoryTableAdapter
     Friend WithEvents ManufacturersBindingSource As BindingSource

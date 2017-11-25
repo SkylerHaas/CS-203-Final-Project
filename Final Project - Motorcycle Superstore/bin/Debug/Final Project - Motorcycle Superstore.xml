@@ -32,7 +32,47 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.BodyStylesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.ManufacturersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.ConditionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.CylindersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:WindowsApplication1.MotorcycleShopDataSet.InventoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.BodyStylesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.ManufacturersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.ConditionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.CylindersRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -42,7 +82,47 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.BodyStylesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.ManufacturersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.ConditionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.CylindersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.InventoryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.BodyStylesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.ManufacturersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.ConditionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.CylindersTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

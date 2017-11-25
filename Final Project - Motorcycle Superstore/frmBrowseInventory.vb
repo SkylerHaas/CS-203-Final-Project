@@ -2,14 +2,15 @@
 
     Private inventory As Inventory = New Inventory
 
-    Private Sub btnSell_Click(sender As Object, e As EventArgs) Handles btnSell.Click
-        frmSellInventory.ShowDialog()
-    End Sub
-
     Private Sub frmBrowseInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Inventory' table. You can move, or remove it, as needed.
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Manufacturers' table. You can move, or remove it, as needed.
+        Me.ManufacturersTableAdapter.Fill(Me.MotorcycleShopDataSet.Manufacturers)
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.BodyStyles' table. You can move, or remove it, as needed.
+        Me.BodyStylesTableAdapter.Fill(Me.MotorcycleShopDataSet.BodyStyles)
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Manufacturers' table. You can move, or remove it, as needed.
         dgvInventory.DataSource = inventory.GetCurrentInventory()
-        cboBodyStyle.AutoCompleteSource = 
+        cboMake.SelectedText = ""
+        cboBodyStyle.SelectedText = ""
     End Sub
 
     Private Sub btnViewAll_Click(sender As Object, e As EventArgs) Handles btnViewAll.Click
@@ -19,14 +20,18 @@
         dgvInventory.DataSource = inventory.GetCurrentInventory()
     End Sub
 
+    Private Sub btnSell_Click(sender As Object, e As EventArgs) Handles btnSell.Click
+        frmSellInventory.ShowDialog()
+    End Sub
+
     Private Sub cboBodyStyle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBodyStyle.SelectedIndexChanged
         If cboBodyStyle.SelectedIndex <> -1 Then
             If cboMake.SelectedIndex <> -1 Then
                 dgvInventory.DataSource = Nothing
-                dgvInventory.DataSource = inventory.GetCurrentInventoryByBodyStyleAndMake(cboMake.SelectedText, cboBodyStyle.SelectedText)
+                dgvInventory.DataSource = inventory.GetCurrentInventoryByBodyStyleAndMake(cboBodyStyle.SelectedValue.ToString, cboMake.SelectedValue.ToString)
             Else
                 dgvInventory.DataSource = Nothing
-                dgvInventory.DataSource = inventory.GetCurrentInventoryByBodyStyle(cboBodyStyle.SelectedText)
+                dgvInventory.DataSource = inventory.GetCurrentInventoryByBodyStyle(cboBodyStyle.SelectedValue.ToString)
             End If
         End If
     End Sub
@@ -35,10 +40,10 @@
         If cboMake.SelectedIndex <> -1 Then
             If cboBodyStyle.SelectedIndex <> -1 Then
                 dgvInventory.DataSource = Nothing
-                dgvInventory.DataSource = inventory.GetCurrentInventoryByBodyStyleAndMake(cboMake.SelectedText, cboBodyStyle.SelectedText)
+                dgvInventory.DataSource = inventory.GetCurrentInventoryByBodyStyleAndMake(cboBodyStyle.SelectedValue.ToString, cboMake.SelectedValue.ToString)
             Else
                 dgvInventory.DataSource = Nothing
-                dgvInventory.DataSource = inventory.GetCurrentInventoryByMake(cboMake.SelectedText)
+                dgvInventory.DataSource = inventory.GetCurrentInventoryByMake(cboMake.SelectedValue.ToString)
             End If
         End If
     End Sub

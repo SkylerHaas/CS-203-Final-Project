@@ -25,12 +25,12 @@ Partial Class frmSellInventory
         Me.rdoLoan = New System.Windows.Forms.RadioButton()
         Me.rdoCash = New System.Windows.Forms.RadioButton()
         Me.grpLoanDetails = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblAPR = New System.Windows.Forms.Label()
-        Me.lblPayment = New System.Windows.Forms.Label()
         Me.cboTerm = New System.Windows.Forms.ComboBox()
+        Me.lblPayment = New System.Windows.Forms.Label()
+        Me.lblAPR = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.lblModel = New System.Windows.Forms.Label()
         Me.lblMake = New System.Windows.Forms.Label()
         Me.lblYear = New System.Windows.Forms.Label()
@@ -81,48 +81,13 @@ Partial Class frmSellInventory
         Me.grpLoanDetails.TabStop = False
         Me.grpLoanDetails.Text = "Loan Details"
         '
-        'Label1
+        'cboTerm
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Term: "
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 49)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "APR: "
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 74)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Payment: "
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblAPR
-        '
-        Me.lblAPR.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAPR.AutoSize = True
-        Me.lblAPR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblAPR.Location = New System.Drawing.Point(70, 47)
-        Me.lblAPR.MinimumSize = New System.Drawing.Size(50, 18)
-        Me.lblAPR.Name = "lblAPR"
-        Me.lblAPR.Size = New System.Drawing.Size(50, 18)
-        Me.lblAPR.TabIndex = 3
-        Me.lblAPR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.cboTerm.FormattingEnabled = True
+        Me.cboTerm.Location = New System.Drawing.Point(49, 18)
+        Me.cboTerm.Name = "cboTerm"
+        Me.cboTerm.Size = New System.Drawing.Size(71, 21)
+        Me.cboTerm.TabIndex = 5
         '
         'lblPayment
         '
@@ -138,13 +103,48 @@ Partial Class frmSellInventory
         Me.lblPayment.TabIndex = 4
         Me.lblPayment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'cboTerm
+        'lblAPR
         '
-        Me.cboTerm.FormattingEnabled = True
-        Me.cboTerm.Location = New System.Drawing.Point(49, 18)
-        Me.cboTerm.Name = "cboTerm"
-        Me.cboTerm.Size = New System.Drawing.Size(71, 21)
-        Me.cboTerm.TabIndex = 5
+        Me.lblAPR.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblAPR.AutoSize = True
+        Me.lblAPR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblAPR.Location = New System.Drawing.Point(70, 47)
+        Me.lblAPR.MinimumSize = New System.Drawing.Size(50, 18)
+        Me.lblAPR.Name = "lblAPR"
+        Me.lblAPR.Size = New System.Drawing.Size(50, 18)
+        Me.lblAPR.TabIndex = 3
+        Me.lblAPR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 74)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(54, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Payment: "
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 49)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(35, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "APR: "
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(37, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Term: "
         '
         'lblModel
         '
