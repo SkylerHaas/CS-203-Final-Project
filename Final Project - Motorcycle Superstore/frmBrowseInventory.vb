@@ -9,9 +9,12 @@
     Private Sub frmBrowseInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Inventory' table. You can move, or remove it, as needed.
         dgvInventory.DataSource = inventory.GetCurrentInventory()
+        cboBodyStyle.AutoCompleteSource = 
     End Sub
 
     Private Sub btnViewAll_Click(sender As Object, e As EventArgs) Handles btnViewAll.Click
+        cboMake.SelectedIndex = -1
+        cboBodyStyle.SelectedIndex = -1
         dgvInventory.DataSource = Nothing
         dgvInventory.DataSource = inventory.GetCurrentInventory()
     End Sub

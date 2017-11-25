@@ -37,13 +37,34 @@ Partial Class frmAddInventory
         Me.txtEngineSize = New System.Windows.Forms.TextBox()
         Me.cboCondition = New System.Windows.Forms.ComboBox()
         Me.cboBodyStyle = New System.Windows.Forms.ComboBox()
+        Me.BodyStylesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MotorcycleShopDataSet = New WindowsApplication1.MotorcycleShopDataSet()
         Me.cboEngineCylinders = New System.Windows.Forms.ComboBox()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.cboMake = New System.Windows.Forms.ComboBox()
+        Me.ManufacturersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MotorcycleShopDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.errorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.MotorcycleShopDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InventoryTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.InventoryTableAdapter()
+        Me.ManufacturersTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.ManufacturersTableAdapter()
+        Me.BodyStylesTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.BodyStylesTableAdapter()
+        Me.CylindersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CylindersTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.CylindersTableAdapter()
+        Me.ConditionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ConditionsTableAdapter = New WindowsApplication1.MotorcycleShopDataSetTableAdapters.ConditionsTableAdapter()
+        CType(Me.BodyStylesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ManufacturersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MotorcycleShopDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MotorcycleShopDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CylindersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConditionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -148,30 +169,46 @@ Partial Class frmAddInventory
         '
         'cboCondition
         '
+        Me.cboCondition.DataSource = Me.ConditionsBindingSource
+        Me.cboCondition.DisplayMember = "Condition"
         Me.cboCondition.FormattingEnabled = True
-        Me.cboCondition.Items.AddRange(New Object() {"New", "Used - Excellent", "Used - Very Good", "Used - Good", "Used - Fair", "Used - Poor"})
         Me.cboCondition.Location = New System.Drawing.Point(100, 126)
         Me.cboCondition.Name = "cboCondition"
         Me.cboCondition.Size = New System.Drawing.Size(100, 21)
         Me.cboCondition.TabIndex = 15
+        Me.cboCondition.ValueMember = "Condition"
         '
         'cboBodyStyle
         '
+        Me.cboBodyStyle.DataSource = Me.BodyStylesBindingSource
+        Me.cboBodyStyle.DisplayMember = "BodyStyle"
         Me.cboBodyStyle.FormattingEnabled = True
-        Me.cboBodyStyle.Items.AddRange(New Object() {"Standard", "Sport", "Supersport", "Sport-Touring", "Touring", "Cruiser", "Chopper", "Cafe Racer", "Dual-Sport", "Off-Road", "Scooter"})
         Me.cboBodyStyle.Location = New System.Drawing.Point(100, 149)
         Me.cboBodyStyle.Name = "cboBodyStyle"
         Me.cboBodyStyle.Size = New System.Drawing.Size(100, 21)
         Me.cboBodyStyle.TabIndex = 16
+        Me.cboBodyStyle.ValueMember = "BodyStyle"
+        '
+        'BodyStylesBindingSource
+        '
+        Me.BodyStylesBindingSource.DataMember = "BodyStyles"
+        Me.BodyStylesBindingSource.DataSource = Me.MotorcycleShopDataSet
+        '
+        'MotorcycleShopDataSet
+        '
+        Me.MotorcycleShopDataSet.DataSetName = "MotorcycleShopDataSet"
+        Me.MotorcycleShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cboEngineCylinders
         '
+        Me.cboEngineCylinders.DataSource = Me.CylindersBindingSource
+        Me.cboEngineCylinders.DisplayMember = "Cylinders"
         Me.cboEngineCylinders.FormattingEnabled = True
-        Me.cboEngineCylinders.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "8", "10"})
         Me.cboEngineCylinders.Location = New System.Drawing.Point(100, 195)
         Me.cboEngineCylinders.Name = "cboEngineCylinders"
         Me.cboEngineCylinders.Size = New System.Drawing.Size(100, 21)
         Me.cboEngineCylinders.TabIndex = 17
+        Me.cboEngineCylinders.ValueMember = "Cylinders"
         '
         'btnAdd
         '
@@ -184,12 +221,24 @@ Partial Class frmAddInventory
         '
         'cboMake
         '
+        Me.cboMake.DataSource = Me.ManufacturersBindingSource
+        Me.cboMake.DisplayMember = "Make"
         Me.cboMake.FormattingEnabled = True
-        Me.cboMake.Items.AddRange(New Object() {"Kawasaki", "Suzuki", "Honda", "Yamaha", "Harley-Davidson", "Indian", "Triumph", "KTM"})
         Me.cboMake.Location = New System.Drawing.Point(100, 54)
         Me.cboMake.Name = "cboMake"
         Me.cboMake.Size = New System.Drawing.Size(100, 21)
         Me.cboMake.TabIndex = 19
+        Me.cboMake.ValueMember = "Make"
+        '
+        'ManufacturersBindingSource
+        '
+        Me.ManufacturersBindingSource.DataMember = "Manufacturers"
+        Me.ManufacturersBindingSource.DataSource = Me.MotorcycleShopDataSet
+        '
+        'MotorcycleShopDataSetBindingSource
+        '
+        Me.MotorcycleShopDataSetBindingSource.DataSource = Me.MotorcycleShopDataSet
+        Me.MotorcycleShopDataSetBindingSource.Position = 0
         '
         'Label9
         '
@@ -210,6 +259,46 @@ Partial Class frmAddInventory
         'errorProvider
         '
         Me.errorProvider.ContainerControl = Me
+        '
+        'MotorcycleShopDataSetBindingSource1
+        '
+        Me.MotorcycleShopDataSetBindingSource1.DataSource = Me.MotorcycleShopDataSet
+        Me.MotorcycleShopDataSetBindingSource1.Position = 0
+        '
+        'InventoryBindingSource
+        '
+        Me.InventoryBindingSource.DataMember = "Inventory"
+        Me.InventoryBindingSource.DataSource = Me.MotorcycleShopDataSet
+        '
+        'InventoryTableAdapter
+        '
+        Me.InventoryTableAdapter.ClearBeforeFill = True
+        '
+        'ManufacturersTableAdapter
+        '
+        Me.ManufacturersTableAdapter.ClearBeforeFill = True
+        '
+        'BodyStylesTableAdapter
+        '
+        Me.BodyStylesTableAdapter.ClearBeforeFill = True
+        '
+        'CylindersBindingSource
+        '
+        Me.CylindersBindingSource.DataMember = "Cylinders"
+        Me.CylindersBindingSource.DataSource = Me.MotorcycleShopDataSet
+        '
+        'CylindersTableAdapter
+        '
+        Me.CylindersTableAdapter.ClearBeforeFill = True
+        '
+        'ConditionsBindingSource
+        '
+        Me.ConditionsBindingSource.DataMember = "Conditions"
+        Me.ConditionsBindingSource.DataSource = Me.MotorcycleShopDataSet
+        '
+        'ConditionsTableAdapter
+        '
+        Me.ConditionsTableAdapter.ClearBeforeFill = True
         '
         'frmAddInventory
         '
@@ -237,7 +326,15 @@ Partial Class frmAddInventory
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmAddInventory"
         Me.Text = "frmAddInventory"
+        CType(Me.BodyStylesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ManufacturersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MotorcycleShopDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errorProvider, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MotorcycleShopDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CylindersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConditionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,4 +360,17 @@ Partial Class frmAddInventory
     Friend WithEvents Label9 As Label
     Friend WithEvents txtPrice As TextBox
     Friend WithEvents errorProvider As ErrorProvider
+    Friend WithEvents MotorcycleShopDataSet As MotorcycleShopDataSet
+    Friend WithEvents MotorcycleShopDataSetBindingSource As BindingSource
+    Friend WithEvents MotorcycleShopDataSetBindingSource1 As BindingSource
+    Friend WithEvents InventoryBindingSource As BindingSource
+    Friend WithEvents InventoryTableAdapter As MotorcycleShopDataSetTableAdapters.InventoryTableAdapter
+    Friend WithEvents ManufacturersBindingSource As BindingSource
+    Friend WithEvents ManufacturersTableAdapter As MotorcycleShopDataSetTableAdapters.ManufacturersTableAdapter
+    Friend WithEvents BodyStylesBindingSource As BindingSource
+    Friend WithEvents BodyStylesTableAdapter As MotorcycleShopDataSetTableAdapters.BodyStylesTableAdapter
+    Friend WithEvents CylindersBindingSource As BindingSource
+    Friend WithEvents CylindersTableAdapter As MotorcycleShopDataSetTableAdapters.CylindersTableAdapter
+    Friend WithEvents ConditionsBindingSource As BindingSource
+    Friend WithEvents ConditionsTableAdapter As MotorcycleShopDataSetTableAdapters.ConditionsTableAdapter
 End Class

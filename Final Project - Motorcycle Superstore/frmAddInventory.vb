@@ -62,4 +62,18 @@
 
     Private Sub txtYear_TextChanged(sender As Object, e As EventArgs) Handles txtYear.TextChanged
     End Sub
+
+    Private Sub frmAddInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Conditions' table. You can move, or remove it, as needed.
+        Me.ConditionsTableAdapter.Fill(Me.MotorcycleShopDataSet.Conditions)
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Cylinders' table. You can move, or remove it, as needed.
+        Me.CylindersTableAdapter.Fill(Me.MotorcycleShopDataSet.Cylinders)
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.BodyStyles' table. You can move, or remove it, as needed.
+        Me.BodyStylesTableAdapter.Fill(Me.MotorcycleShopDataSet.BodyStyles)
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Manufacturers' table. You can move, or remove it, as needed.
+        Me.ManufacturersTableAdapter.Fill(Me.MotorcycleShopDataSet.Manufacturers)
+        'TODO: This line of code loads data into the 'MotorcycleShopDataSet.Inventory' table. You can move, or remove it, as needed.
+        Me.InventoryTableAdapter.Fill(Me.MotorcycleShopDataSet.Inventory)
+
+    End Sub
 End Class
