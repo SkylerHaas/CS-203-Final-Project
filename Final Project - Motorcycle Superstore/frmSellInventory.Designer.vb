@@ -46,7 +46,7 @@ Partial Class frmSellInventory
         'rdoLoan
         '
         Me.rdoLoan.AutoSize = True
-        Me.rdoLoan.Location = New System.Drawing.Point(270, 12)
+        Me.rdoLoan.Location = New System.Drawing.Point(288, 2)
         Me.rdoLoan.Name = "rdoLoan"
         Me.rdoLoan.Size = New System.Drawing.Size(81, 17)
         Me.rdoLoan.TabIndex = 0

@@ -52,12 +52,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSet.LoansDataTable">
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.CustomersDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSet.CustomersDataTable">
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.LoansDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -87,12 +87,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSet.LoansRow">
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.CustomersRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSet.CustomersRow">
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.LoansRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -122,12 +122,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSet.LoansRowChangeEvent">
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.CustomersRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSet.CustomersRowChangeEvent">
+<member name="T:WindowsApplication1.MotorcycleShopDataSet.LoansRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -157,12 +157,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.LoansTableAdapter">
+<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.CustomersTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.CustomersTableAdapter">
+<member name="T:WindowsApplication1.MotorcycleShopDataSetTableAdapters.LoansTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

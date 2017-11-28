@@ -41,9 +41,10 @@ Partial Class frmViewLoans
         Me.InventoryIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NextPaymentDueDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastPaymentMadeDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PaymentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AprDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmountDueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RemainingLoanAmountDueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.dgvLoans, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MotorcycleShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +56,7 @@ Partial Class frmViewLoans
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnViewAll, Me.ToolStripSeparator1, Me.btnViewOutstanding, Me.ToolStripSeparator2, Me.btnViewPaid, Me.ToolStripSeparator3, Me.btnEnterPayment})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(846, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(884, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -112,16 +113,16 @@ Partial Class frmViewLoans
         '
         'dgvLoans
         '
-        Me.dgvLoans.AllowUserToAddRows = False
         Me.dgvLoans.AllowUserToDeleteRows = False
         Me.dgvLoans.AutoGenerateColumns = False
+        Me.dgvLoans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLoans.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LoanIdDataGridViewTextBoxColumn, Me.CustIdDataGridViewTextBoxColumn, Me.InventoryIdDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.NextPaymentDueDateDataGridViewTextBoxColumn, Me.PaymentDataGridViewTextBoxColumn, Me.AprDataGridViewTextBoxColumn, Me.AmountDueDataGridViewTextBoxColumn})
+        Me.dgvLoans.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LoanIdDataGridViewTextBoxColumn, Me.CustIdDataGridViewTextBoxColumn, Me.InventoryIdDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.NextPaymentDueDateDataGridViewTextBoxColumn, Me.LastPaymentMadeDateDataGridViewTextBoxColumn, Me.PaymentDataGridViewTextBoxColumn, Me.AprDataGridViewTextBoxColumn, Me.RemainingLoanAmountDueDataGridViewTextBoxColumn})
         Me.dgvLoans.DataSource = Me.LoansBindingSource
         Me.dgvLoans.Location = New System.Drawing.Point(0, 38)
         Me.dgvLoans.Name = "dgvLoans"
         Me.dgvLoans.ReadOnly = True
-        Me.dgvLoans.Size = New System.Drawing.Size(846, 223)
+        Me.dgvLoans.Size = New System.Drawing.Size(884, 223)
         Me.dgvLoans.TabIndex = 1
         '
         'MotorcycleShopDataSet
@@ -144,6 +145,7 @@ Partial Class frmViewLoans
         Me.LoanIdDataGridViewTextBoxColumn.HeaderText = "LoanId"
         Me.LoanIdDataGridViewTextBoxColumn.Name = "LoanIdDataGridViewTextBoxColumn"
         Me.LoanIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LoanIdDataGridViewTextBoxColumn.Width = 65
         '
         'CustIdDataGridViewTextBoxColumn
         '
@@ -151,6 +153,7 @@ Partial Class frmViewLoans
         Me.CustIdDataGridViewTextBoxColumn.HeaderText = "CustId"
         Me.CustIdDataGridViewTextBoxColumn.Name = "CustIdDataGridViewTextBoxColumn"
         Me.CustIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CustIdDataGridViewTextBoxColumn.Width = 62
         '
         'InventoryIdDataGridViewTextBoxColumn
         '
@@ -158,6 +161,7 @@ Partial Class frmViewLoans
         Me.InventoryIdDataGridViewTextBoxColumn.HeaderText = "InventoryId"
         Me.InventoryIdDataGridViewTextBoxColumn.Name = "InventoryIdDataGridViewTextBoxColumn"
         Me.InventoryIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.InventoryIdDataGridViewTextBoxColumn.Width = 85
         '
         'StatusDataGridViewTextBoxColumn
         '
@@ -165,6 +169,7 @@ Partial Class frmViewLoans
         Me.StatusDataGridViewTextBoxColumn.HeaderText = "Status"
         Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
         Me.StatusDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatusDataGridViewTextBoxColumn.Width = 62
         '
         'NextPaymentDueDateDataGridViewTextBoxColumn
         '
@@ -172,6 +177,15 @@ Partial Class frmViewLoans
         Me.NextPaymentDueDateDataGridViewTextBoxColumn.HeaderText = "NextPaymentDueDate"
         Me.NextPaymentDueDateDataGridViewTextBoxColumn.Name = "NextPaymentDueDateDataGridViewTextBoxColumn"
         Me.NextPaymentDueDateDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NextPaymentDueDateDataGridViewTextBoxColumn.Width = 138
+        '
+        'LastPaymentMadeDateDataGridViewTextBoxColumn
+        '
+        Me.LastPaymentMadeDateDataGridViewTextBoxColumn.DataPropertyName = "LastPaymentMadeDate"
+        Me.LastPaymentMadeDateDataGridViewTextBoxColumn.HeaderText = "LastPaymentMadeDate"
+        Me.LastPaymentMadeDateDataGridViewTextBoxColumn.Name = "LastPaymentMadeDateDataGridViewTextBoxColumn"
+        Me.LastPaymentMadeDateDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LastPaymentMadeDateDataGridViewTextBoxColumn.Width = 143
         '
         'PaymentDataGridViewTextBoxColumn
         '
@@ -179,6 +193,7 @@ Partial Class frmViewLoans
         Me.PaymentDataGridViewTextBoxColumn.HeaderText = "Payment"
         Me.PaymentDataGridViewTextBoxColumn.Name = "PaymentDataGridViewTextBoxColumn"
         Me.PaymentDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PaymentDataGridViewTextBoxColumn.Width = 73
         '
         'AprDataGridViewTextBoxColumn
         '
@@ -186,19 +201,21 @@ Partial Class frmViewLoans
         Me.AprDataGridViewTextBoxColumn.HeaderText = "Apr"
         Me.AprDataGridViewTextBoxColumn.Name = "AprDataGridViewTextBoxColumn"
         Me.AprDataGridViewTextBoxColumn.ReadOnly = True
+        Me.AprDataGridViewTextBoxColumn.Width = 48
         '
-        'AmountDueDataGridViewTextBoxColumn
+        'RemainingLoanAmountDueDataGridViewTextBoxColumn
         '
-        Me.AmountDueDataGridViewTextBoxColumn.DataPropertyName = "AmountDue"
-        Me.AmountDueDataGridViewTextBoxColumn.HeaderText = "AmountDue"
-        Me.AmountDueDataGridViewTextBoxColumn.Name = "AmountDueDataGridViewTextBoxColumn"
-        Me.AmountDueDataGridViewTextBoxColumn.ReadOnly = True
+        Me.RemainingLoanAmountDueDataGridViewTextBoxColumn.DataPropertyName = "RemainingLoanAmountDue"
+        Me.RemainingLoanAmountDueDataGridViewTextBoxColumn.HeaderText = "RemainingLoanAmountDue"
+        Me.RemainingLoanAmountDueDataGridViewTextBoxColumn.Name = "RemainingLoanAmountDueDataGridViewTextBoxColumn"
+        Me.RemainingLoanAmountDueDataGridViewTextBoxColumn.ReadOnly = True
+        Me.RemainingLoanAmountDueDataGridViewTextBoxColumn.Width = 162
         '
         'frmViewLoans
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(846, 261)
+        Me.ClientSize = New System.Drawing.Size(884, 261)
         Me.Controls.Add(Me.dgvLoans)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "frmViewLoans"
@@ -230,7 +247,8 @@ Partial Class frmViewLoans
     Friend WithEvents InventoryIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NextPaymentDueDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LastPaymentMadeDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PaymentDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AprDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AmountDueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents RemainingLoanAmountDueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
