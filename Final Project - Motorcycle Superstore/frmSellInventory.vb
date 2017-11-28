@@ -15,4 +15,15 @@
             grpLoanDetails.Enabled = False
         End If
     End Sub
+
+    Private Sub txtID_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
+
+    End Sub
+
+    Private Sub UpdateSaleFormMotorcycle()
+        lblYear.Text
+        lblMake.Text
+        lblModel.Text
+        lblPrice.Text = 
+    End Sub
 End Class

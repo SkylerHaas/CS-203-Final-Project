@@ -1,7 +1,5 @@
 ﻿Public Class frmViewLoans
 
-    Private loans As Loans = New Loans
-
     Private Sub btnEnterPayment_Click(sender As Object, e As EventArgs) Handles btnEnterPayment.Click
         frmLoanPayment.ShowDialog()
     End Sub
@@ -11,7 +9,7 @@
         Me.LoansTableAdapter.Fill(Me.MotorcycleShopDataSet.Loans)
         If frmOpeningScreen.firstLoad Then
             dgvLoans.DataSource = Nothing
-            dgvLoans.DataSource = loans.GetPaymentsDue
+            dgvLoans.DataSource = frmOpeningScreen.loans.GetPaymentsDue
         End If
     End Sub
 End Class

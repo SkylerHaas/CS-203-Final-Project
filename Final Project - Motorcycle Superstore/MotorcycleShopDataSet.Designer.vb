@@ -5864,8 +5864,9 @@ Namespace MotorcycleShopDataSetTableAdapters
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO Loans"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (CustId, InventoryId, Status, NextPay"& _ 
                 "mentDueDate, Payment, Apr, RemainingLoanAmountDue)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@CustId,@Inve"& _ 
-                "ntoryId,@Status,@NextPaymentDueDate,@Payment,@Apr,@RemainingLoanAmountDue);    "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT LoanId, CustId, InventoryId, Status, NextPaymentDueDate, LastPaymentMade"& _ 
-                "Date, Payment, Apr, RemainingLoanAmountDue FROM Loans WHERE (LoanId = @LoanId)"
+                "ntoryId,@Status,@NextPaymentDueDate,@Payment,@Apr,@RemainingLoanAmountDue);     "& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT LoanId, CustId, InventoryId, Status, NextPaymentDueDate, LastPaymentMad"& _ 
+                "eDate, Payment, Apr, RemainingLoanAmountDue FROM Loans WHERE (LoanId = @LoanId)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CustId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InventoryId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6189,6 +6190,10 @@ Namespace MotorcycleShopDataSetTableAdapters
                     ByVal Original_RemainingLoanAmountDue As Decimal) As Integer
             Return Me.Update(Original_LoanId, CustId, InventoryId, Status, NextPaymentDueDate, LastPaymentMadeDate, Payment, Apr, RemainingLoanAmountDue, Original_LoanId, Original_CustId, Original_InventoryId, Original_Status, Original_NextPaymentDueDate, Original_LastPaymentMadeDate, Original_Payment, Original_Apr, Original_RemainingLoanAmountDue)
         End Function
+
+        Friend Sub Insert(custId As Integer, inventoryId As Integer, status As String, nextPaymentDueDate As Date, payment As Decimal, apr As Decimal, remainingLoanAmountDue As Decimal)
+            Throw New NotImplementedException()
+        End Sub
     End Class
     
     '''<summary>

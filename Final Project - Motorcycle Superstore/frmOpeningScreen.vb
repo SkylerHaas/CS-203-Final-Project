@@ -1,8 +1,9 @@
 ﻿Public Class frmOpeningScreen
 
-    Private inventory As Inventory = New Inventory
-    Private loans As Loans = New Loans
-    Public firstLoad As Boolean = True
+    Public inventory As Inventory = New Inventory
+    Public loans As Loans = New Loans
+    Public firstLoad As Boolean = True  'used to state whether the application is loading
+    Public saleID As Integer    'used to store the bike being sold
 
     Private Sub frmOpeningScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If inventory.UpdatePrices Then

@@ -40,13 +40,22 @@ Partial Class frmSellInventory
         Me.lblPrice = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnSell = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtFirstName = New System.Windows.Forms.TextBox()
+        Me.txtLastName = New System.Windows.Forms.TextBox()
+        Me.txtBirthday = New System.Windows.Forms.TextBox()
         Me.grpLoanDetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'rdoLoan
         '
         Me.rdoLoan.AutoSize = True
-        Me.rdoLoan.Location = New System.Drawing.Point(288, 2)
+        Me.rdoLoan.Location = New System.Drawing.Point(270, 10)
         Me.rdoLoan.Name = "rdoLoan"
         Me.rdoLoan.Size = New System.Drawing.Size(81, 17)
         Me.rdoLoan.TabIndex = 0
@@ -151,7 +160,7 @@ Partial Class frmSellInventory
         Me.lblModel.AutoSize = True
         Me.lblModel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblModel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblModel.Location = New System.Drawing.Point(79, 88)
+        Me.lblModel.Location = New System.Drawing.Point(78, 107)
         Me.lblModel.MinimumSize = New System.Drawing.Size(150, 20)
         Me.lblModel.Name = "lblModel"
         Me.lblModel.Size = New System.Drawing.Size(150, 22)
@@ -162,7 +171,7 @@ Partial Class frmSellInventory
         Me.lblMake.AutoSize = True
         Me.lblMake.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblMake.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMake.Location = New System.Drawing.Point(79, 56)
+        Me.lblMake.Location = New System.Drawing.Point(78, 75)
         Me.lblMake.MinimumSize = New System.Drawing.Size(150, 20)
         Me.lblMake.Name = "lblMake"
         Me.lblMake.Size = New System.Drawing.Size(150, 22)
@@ -173,7 +182,7 @@ Partial Class frmSellInventory
         Me.lblYear.AutoSize = True
         Me.lblYear.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblYear.Location = New System.Drawing.Point(79, 22)
+        Me.lblYear.Location = New System.Drawing.Point(78, 41)
         Me.lblYear.MinimumSize = New System.Drawing.Size(150, 20)
         Me.lblYear.Name = "lblYear"
         Me.lblYear.Size = New System.Drawing.Size(150, 22)
@@ -183,7 +192,7 @@ Partial Class frmSellInventory
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(13, 88)
+        Me.Label6.Location = New System.Drawing.Point(12, 107)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(60, 20)
         Me.Label6.TabIndex = 11
@@ -193,7 +202,7 @@ Partial Class frmSellInventory
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(17, 56)
+        Me.Label5.Location = New System.Drawing.Point(16, 75)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(56, 20)
         Me.Label5.TabIndex = 10
@@ -203,7 +212,7 @@ Partial Class frmSellInventory
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(22, 22)
+        Me.Label4.Location = New System.Drawing.Point(21, 41)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(51, 20)
         Me.Label4.TabIndex = 9
@@ -214,7 +223,7 @@ Partial Class frmSellInventory
         Me.lblPrice.AutoSize = True
         Me.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrice.Location = New System.Drawing.Point(79, 120)
+        Me.lblPrice.Location = New System.Drawing.Point(78, 139)
         Me.lblPrice.MinimumSize = New System.Drawing.Size(150, 20)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(150, 22)
@@ -224,7 +233,7 @@ Partial Class frmSellInventory
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(21, 120)
+        Me.Label8.Location = New System.Drawing.Point(20, 139)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(52, 20)
         Me.Label8.TabIndex = 15
@@ -240,11 +249,98 @@ Partial Class frmSellInventory
         Me.btnSell.Text = "Confirm Sale"
         Me.btnSell.UseVisualStyleBackColor = True
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(38, 10)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(34, 20)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "ID: "
+        '
+        'txtID
+        '
+        Me.txtID.Location = New System.Drawing.Point(78, 10)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(150, 20)
+        Me.txtID.TabIndex = 19
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(35, 274)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(75, 20)
+        Me.Label10.TabIndex = 24
+        Me.Label10.Text = "Birthday: "
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(20, 242)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(90, 20)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Last Name:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(16, 210)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(94, 20)
+        Me.Label14.TabIndex = 20
+        Me.Label14.Text = "First Name: "
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(74, 176)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(160, 20)
+        Me.Label15.TabIndex = 26
+        Me.Label15.Text = "-----Customer Info-----"
+        '
+        'txtFirstName
+        '
+        Me.txtFirstName.Location = New System.Drawing.Point(116, 212)
+        Me.txtFirstName.Name = "txtFirstName"
+        Me.txtFirstName.Size = New System.Drawing.Size(150, 20)
+        Me.txtFirstName.TabIndex = 27
+        '
+        'txtLastName
+        '
+        Me.txtLastName.Location = New System.Drawing.Point(116, 244)
+        Me.txtLastName.Name = "txtLastName"
+        Me.txtLastName.Size = New System.Drawing.Size(150, 20)
+        Me.txtLastName.TabIndex = 28
+        '
+        'txtBirthday
+        '
+        Me.txtBirthday.Location = New System.Drawing.Point(116, 276)
+        Me.txtBirthday.Name = "txtBirthday"
+        Me.txtBirthday.Size = New System.Drawing.Size(150, 20)
+        Me.txtBirthday.TabIndex = 29
+        '
         'frmSellInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(643, 169)
+        Me.ClientSize = New System.Drawing.Size(643, 350)
+        Me.Controls.Add(Me.txtBirthday)
+        Me.Controls.Add(Me.txtLastName)
+        Me.Controls.Add(Me.txtFirstName)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.txtID)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnSell)
         Me.Controls.Add(Me.lblPrice)
         Me.Controls.Add(Me.Label8)
@@ -284,4 +380,13 @@ Partial Class frmSellInventory
     Friend WithEvents lblPrice As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents btnSell As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtID As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtFirstName As TextBox
+    Friend WithEvents txtLastName As TextBox
+    Friend WithEvents txtBirthday As TextBox
 End Class
