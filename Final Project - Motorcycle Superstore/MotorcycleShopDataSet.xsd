@@ -418,7 +418,18 @@ SELECT LoanId, CustId, InventoryId, Status, NextPaymentDueDate, Payment, Apr, Am
               <Mapping SourceColumn="Apr" DataSetColumn="Apr" />
               <Mapping SourceColumn="AmountDue" DataSetColumn="AmountDue" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="MotorcycleShopDataSet1ConnectionString (MySettings)" DbObjectName="dbo.Loans" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPaymentsDue" GetMethodModifier="Public" GetMethodName="GetPaymentsDue" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPaymentsDue" UserSourceName="GetPaymentsDue">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        LoanId, CustId, InventoryId, Status, NextPaymentDueDate, Payment, Apr, AmountDue
+FROM            Loans
+WHERE        (DATEDIFF(day, NextPaymentDueDate, GETDATE()) &lt;= 7)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CustomersTableAdapter" GeneratorDataComponentClassName="CustomersTableAdapter" Name="Customers" UserDataComponentName="CustomersTableAdapter">
             <MainSource>
@@ -486,7 +497,7 @@ SELECT CustId, FirstName, LastName, Birthday FROM Customers WHERE (CustId = @Cus
   <xs:element name="MotorcycleShopDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MotorcycleShopDataSet" msprop:Generator_UserDSName="MotorcycleShopDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Inventory" msprop:Generator_TableClassName="InventoryDataTable" msprop:Generator_TableVarName="tableInventory" msprop:Generator_RowChangedName="InventoryRowChanged" msprop:Generator_TablePropName="Inventory" msprop:Generator_RowDeletingName="InventoryRowDeleting" msprop:Generator_RowChangingName="InventoryRowChanging" msprop:Generator_RowEvHandlerName="InventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="InventoryRowDeleted" msprop:Generator_RowClassName="InventoryRow" msprop:Generator_UserTableName="Inventory" msprop:Generator_RowEvArgName="InventoryRowChangeEvent">
+        <xs:element name="Inventory" msprop:Generator_TableClassName="InventoryDataTable" msprop:Generator_TableVarName="tableInventory" msprop:Generator_TablePropName="Inventory" msprop:Generator_RowDeletingName="InventoryRowDeleting" msprop:Generator_RowChangingName="InventoryRowChanging" msprop:Generator_RowEvHandlerName="InventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="InventoryRowDeleted" msprop:Generator_UserTableName="Inventory" msprop:Generator_RowChangedName="InventoryRowChanged" msprop:Generator_RowEvArgName="InventoryRowChangeEvent" msprop:Generator_RowClassName="InventoryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="InventoryId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnInventoryId" msprop:Generator_ColumnPropNameInRow="InventoryId" msprop:Generator_ColumnPropNameInTable="InventoryIdColumn" msprop:Generator_UserColumnName="InventoryId" type="xs:int" />
@@ -528,7 +539,7 @@ SELECT CustId, FirstName, LastName, Birthday FROM Customers WHERE (CustId = @Cus
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BodyStyles" msprop:Generator_TableClassName="BodyStylesDataTable" msprop:Generator_TableVarName="tableBodyStyles" msprop:Generator_TablePropName="BodyStyles" msprop:Generator_RowDeletingName="BodyStylesRowDeleting" msprop:Generator_RowChangingName="BodyStylesRowChanging" msprop:Generator_RowEvHandlerName="BodyStylesRowChangeEventHandler" msprop:Generator_RowDeletedName="BodyStylesRowDeleted" msprop:Generator_UserTableName="BodyStyles" msprop:Generator_RowChangedName="BodyStylesRowChanged" msprop:Generator_RowEvArgName="BodyStylesRowChangeEvent" msprop:Generator_RowClassName="BodyStylesRow">
+        <xs:element name="BodyStyles" msprop:Generator_TableClassName="BodyStylesDataTable" msprop:Generator_TableVarName="tableBodyStyles" msprop:Generator_RowChangedName="BodyStylesRowChanged" msprop:Generator_TablePropName="BodyStyles" msprop:Generator_RowDeletingName="BodyStylesRowDeleting" msprop:Generator_RowChangingName="BodyStylesRowChanging" msprop:Generator_RowEvHandlerName="BodyStylesRowChangeEventHandler" msprop:Generator_RowDeletedName="BodyStylesRowDeleted" msprop:Generator_RowClassName="BodyStylesRow" msprop:Generator_UserTableName="BodyStyles" msprop:Generator_RowEvArgName="BodyStylesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BodyStyle" msprop:Generator_ColumnVarNameInTable="columnBodyStyle" msprop:Generator_ColumnPropNameInRow="BodyStyle" msprop:Generator_ColumnPropNameInTable="BodyStyleColumn" msprop:Generator_UserColumnName="BodyStyle">
@@ -541,7 +552,7 @@ SELECT CustId, FirstName, LastName, Birthday FROM Customers WHERE (CustId = @Cus
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Manufacturers" msprop:Generator_TableClassName="ManufacturersDataTable" msprop:Generator_TableVarName="tableManufacturers" msprop:Generator_TablePropName="Manufacturers" msprop:Generator_RowDeletingName="ManufacturersRowDeleting" msprop:Generator_RowChangingName="ManufacturersRowChanging" msprop:Generator_RowEvHandlerName="ManufacturersRowChangeEventHandler" msprop:Generator_RowDeletedName="ManufacturersRowDeleted" msprop:Generator_UserTableName="Manufacturers" msprop:Generator_RowChangedName="ManufacturersRowChanged" msprop:Generator_RowEvArgName="ManufacturersRowChangeEvent" msprop:Generator_RowClassName="ManufacturersRow">
+        <xs:element name="Manufacturers" msprop:Generator_TableClassName="ManufacturersDataTable" msprop:Generator_TableVarName="tableManufacturers" msprop:Generator_RowChangedName="ManufacturersRowChanged" msprop:Generator_TablePropName="Manufacturers" msprop:Generator_RowDeletingName="ManufacturersRowDeleting" msprop:Generator_RowChangingName="ManufacturersRowChanging" msprop:Generator_RowEvHandlerName="ManufacturersRowChangeEventHandler" msprop:Generator_RowDeletedName="ManufacturersRowDeleted" msprop:Generator_RowClassName="ManufacturersRow" msprop:Generator_UserTableName="Manufacturers" msprop:Generator_RowEvArgName="ManufacturersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Make" msprop:Generator_ColumnVarNameInTable="columnMake" msprop:Generator_ColumnPropNameInRow="Make" msprop:Generator_ColumnPropNameInTable="MakeColumn" msprop:Generator_UserColumnName="Make">
@@ -554,7 +565,7 @@ SELECT CustId, FirstName, LastName, Birthday FROM Customers WHERE (CustId = @Cus
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Conditions" msprop:Generator_TableClassName="ConditionsDataTable" msprop:Generator_TableVarName="tableConditions" msprop:Generator_TablePropName="Conditions" msprop:Generator_RowDeletingName="ConditionsRowDeleting" msprop:Generator_RowChangingName="ConditionsRowChanging" msprop:Generator_RowEvHandlerName="ConditionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ConditionsRowDeleted" msprop:Generator_UserTableName="Conditions" msprop:Generator_RowChangedName="ConditionsRowChanged" msprop:Generator_RowEvArgName="ConditionsRowChangeEvent" msprop:Generator_RowClassName="ConditionsRow">
+        <xs:element name="Conditions" msprop:Generator_TableClassName="ConditionsDataTable" msprop:Generator_TableVarName="tableConditions" msprop:Generator_RowChangedName="ConditionsRowChanged" msprop:Generator_TablePropName="Conditions" msprop:Generator_RowDeletingName="ConditionsRowDeleting" msprop:Generator_RowChangingName="ConditionsRowChanging" msprop:Generator_RowEvHandlerName="ConditionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ConditionsRowDeleted" msprop:Generator_RowClassName="ConditionsRow" msprop:Generator_UserTableName="Conditions" msprop:Generator_RowEvArgName="ConditionsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Condition" msprop:Generator_ColumnVarNameInTable="columnCondition" msprop:Generator_ColumnPropNameInRow="Condition" msprop:Generator_ColumnPropNameInTable="ConditionColumn" msprop:Generator_UserColumnName="Condition">
@@ -567,14 +578,14 @@ SELECT CustId, FirstName, LastName, Birthday FROM Customers WHERE (CustId = @Cus
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cylinders" msprop:Generator_TableClassName="CylindersDataTable" msprop:Generator_TableVarName="tableCylinders" msprop:Generator_TablePropName="Cylinders" msprop:Generator_RowDeletingName="CylindersRowDeleting" msprop:Generator_RowChangingName="CylindersRowChanging" msprop:Generator_RowEvHandlerName="CylindersRowChangeEventHandler" msprop:Generator_RowDeletedName="CylindersRowDeleted" msprop:Generator_UserTableName="Cylinders" msprop:Generator_RowChangedName="CylindersRowChanged" msprop:Generator_RowEvArgName="CylindersRowChangeEvent" msprop:Generator_RowClassName="CylindersRow">
+        <xs:element name="Cylinders" msprop:Generator_TableClassName="CylindersDataTable" msprop:Generator_TableVarName="tableCylinders" msprop:Generator_RowChangedName="CylindersRowChanged" msprop:Generator_TablePropName="Cylinders" msprop:Generator_RowDeletingName="CylindersRowDeleting" msprop:Generator_RowChangingName="CylindersRowChanging" msprop:Generator_RowEvHandlerName="CylindersRowChangeEventHandler" msprop:Generator_RowDeletedName="CylindersRowDeleted" msprop:Generator_RowClassName="CylindersRow" msprop:Generator_UserTableName="Cylinders" msprop:Generator_RowEvArgName="CylindersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Cylinders" msprop:Generator_ColumnVarNameInTable="columnCylinders" msprop:Generator_ColumnPropNameInRow="Cylinders" msprop:Generator_ColumnPropNameInTable="CylindersColumn" msprop:Generator_UserColumnName="Cylinders" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Loans" msprop:Generator_TableClassName="LoansDataTable" msprop:Generator_TableVarName="tableLoans" msprop:Generator_TablePropName="Loans" msprop:Generator_RowDeletingName="LoansRowDeleting" msprop:Generator_RowChangingName="LoansRowChanging" msprop:Generator_RowEvHandlerName="LoansRowChangeEventHandler" msprop:Generator_RowDeletedName="LoansRowDeleted" msprop:Generator_UserTableName="Loans" msprop:Generator_RowChangedName="LoansRowChanged" msprop:Generator_RowEvArgName="LoansRowChangeEvent" msprop:Generator_RowClassName="LoansRow">
+        <xs:element name="Loans" msprop:Generator_TableClassName="LoansDataTable" msprop:Generator_TableVarName="tableLoans" msprop:Generator_RowChangedName="LoansRowChanged" msprop:Generator_TablePropName="Loans" msprop:Generator_RowDeletingName="LoansRowDeleting" msprop:Generator_RowChangingName="LoansRowChanging" msprop:Generator_RowEvHandlerName="LoansRowChangeEventHandler" msprop:Generator_RowDeletedName="LoansRowDeleted" msprop:Generator_RowClassName="LoansRow" msprop:Generator_UserTableName="Loans" msprop:Generator_RowEvArgName="LoansRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LoanId" msprop:Generator_ColumnVarNameInTable="columnLoanId" msprop:Generator_ColumnPropNameInRow="LoanId" msprop:Generator_ColumnPropNameInTable="LoanIdColumn" msprop:Generator_UserColumnName="LoanId" type="xs:int" />
@@ -594,7 +605,7 @@ SELECT CustId, FirstName, LastName, Birthday FROM Customers WHERE (CustId = @Cus
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Customers" msprop:Generator_TableClassName="CustomersDataTable" msprop:Generator_TableVarName="tableCustomers" msprop:Generator_TablePropName="Customers" msprop:Generator_RowDeletingName="CustomersRowDeleting" msprop:Generator_RowChangingName="CustomersRowChanging" msprop:Generator_RowEvHandlerName="CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomersRowDeleted" msprop:Generator_UserTableName="Customers" msprop:Generator_RowChangedName="CustomersRowChanged" msprop:Generator_RowEvArgName="CustomersRowChangeEvent" msprop:Generator_RowClassName="CustomersRow">
+        <xs:element name="Customers" msprop:Generator_TableClassName="CustomersDataTable" msprop:Generator_TableVarName="tableCustomers" msprop:Generator_RowChangedName="CustomersRowChanged" msprop:Generator_TablePropName="Customers" msprop:Generator_RowDeletingName="CustomersRowDeleting" msprop:Generator_RowChangingName="CustomersRowChanging" msprop:Generator_RowEvHandlerName="CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomersRowDeleted" msprop:Generator_RowClassName="CustomersRow" msprop:Generator_UserTableName="Customers" msprop:Generator_RowEvArgName="CustomersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CustId" msprop:Generator_ColumnVarNameInTable="columnCustId" msprop:Generator_ColumnPropNameInRow="CustId" msprop:Generator_ColumnPropNameInTable="CustIdColumn" msprop:Generator_UserColumnName="CustId" type="xs:int" />
@@ -655,8 +666,8 @@ SELECT CustId, FirstName, LastName, Birthday FROM Customers WHERE (CustId = @Cus
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Inventory_Loans" msdata:parent="Inventory" msdata:child="Loans" msdata:parentkey="InventoryId" msdata:childkey="InventoryId" msprop:Generator_UserChildTable="Loans" msprop:Generator_ChildPropName="GetLoansRows" msprop:Generator_UserRelationName="Inventory_Loans" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationInventory_Loans" msprop:Generator_UserParentTable="Inventory" />
-      <msdata:Relationship name="Customers_Loans" msdata:parent="Customers" msdata:child="Loans" msdata:parentkey="CustId" msdata:childkey="CustId" msprop:Generator_UserChildTable="Loans" msprop:Generator_ChildPropName="GetLoansRows" msprop:Generator_UserRelationName="Customers_Loans" msprop:Generator_RelationVarName="relationCustomers_Loans" msprop:Generator_UserParentTable="Customers" msprop:Generator_ParentPropName="CustomersRow" />
+      <msdata:Relationship name="Inventory_Loans" msdata:parent="Inventory" msdata:child="Loans" msdata:parentkey="InventoryId" msdata:childkey="InventoryId" msprop:Generator_UserChildTable="Loans" msprop:Generator_ChildPropName="GetLoansRows" msprop:Generator_UserRelationName="Inventory_Loans" msprop:Generator_RelationVarName="relationInventory_Loans" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
+      <msdata:Relationship name="Customers_Loans" msdata:parent="Customers" msdata:child="Loans" msdata:parentkey="CustId" msdata:childkey="CustId" msprop:Generator_UserChildTable="Loans" msprop:Generator_ChildPropName="GetLoansRows" msprop:Generator_UserRelationName="Customers_Loans" msprop:Generator_ParentPropName="CustomersRow" msprop:Generator_RelationVarName="relationCustomers_Loans" msprop:Generator_UserParentTable="Customers" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -1,11 +1,18 @@
 ﻿Public Class frmOpeningScreen
 
     Private inventory As Inventory = New Inventory
+    Private loans As Loans = New Loans
+    Public firstLoad As Boolean = True
 
     Private Sub frmOpeningScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If inventory.UpdatePrices Then
             MsgBox("Your inventory has been updated with discounted prices for old stock.", vbOKOnly, "Prices Reduced")
         End If
+        If loans.GetPaymentsDue.Rows.Count > 0 Then
+            MsgBox("You have loan payments due to collect soon.", vbOKOnly, "Payments Due")
+            frmViewLoans.ShowDialog()
+        End If
+        firstLoad = False
     End Sub
 
     Private Sub mnuPayment_Click(sender As Object, e As EventArgs) Handles mnuPayment.Click

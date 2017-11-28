@@ -11,7 +11,7 @@
     <Shape ID="DesignTable:Manufacturers" ZOrder="8" X="929" Y="10" Height="97" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
     <Shape ID="DesignTable:Conditions" ZOrder="7" X="930" Y="210" Height="97" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
     <Shape ID="DesignTable:Cylinders" ZOrder="6" X="931" Y="311" Height="97" Width="198" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
-    <Shape ID="DesignTable:Loans" ZOrder="4" X="403" Y="18" Height="229" Width="178" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:Loans" ZOrder="4" X="403" Y="18" Height="248" Width="178" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:Customers" ZOrder="3" X="401" Y="272" Height="153" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
   </Shapes>
   <Connectors>
@@ -35,7 +35,7 @@
         </Point>
         <Point>
           <X>492</X>
-          <Y>247</Y>
+          <Y>266</Y>
         </Point>
       </RoutePoints>
     </Connector>
